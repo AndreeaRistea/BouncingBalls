@@ -85,7 +85,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Andreea Ristea\Desktop\Facultate_Sem2\Sisteme_de_Prelucrare_Grafica\ProiectOpenGL\Dependencies\glew-2.2.0\include;C:\Users\Andreea Ristea\Desktop\Facultate_Sem2\Sisteme_de_Prelucrare_Grafica\ProiectOpenGL\Dependencies\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Andreea Ristea\GitHubProjects\BouncingBalls\Dependencies\freeglut\include;C:\Users\Andreea Ristea\GitHubProjects\BouncingBalls\Dependencies\glew-2.2.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
