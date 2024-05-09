@@ -22,10 +22,22 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Ball.h" />
     <ClInclude Include="Board.h" />
+    <ClInclude Include="Building.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Elements.h" />
     <ClInclude Include="header.h" />
+    <ClInclude Include="Road.h" />
+    <ClInclude Include="stb\stb_image.h" />
+    <ClInclude Include="Tree.h" />
+    <ClInclude Include="Walls.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="grass.jpg" />
+    <Image Include="Textures\grass.jpg" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -85,13 +97,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Andreea Ristea\GitHubProjects\BouncingBalls\Dependencies\freeglut\include;C:\Users\Andreea Ristea\GitHubProjects\BouncingBalls\Dependencies\glew-2.2.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Andreea Ristea\GitHubProjects\BouncingBalls\Dependencies\glew-2.2.0\include;C:\Users\Andreea Ristea\GitHubProjects\BouncingBalls\Dependencies\GLFW\include;C:\Users\Andreea Ristea\GitHubProjects\BouncingBalls\Dependencies\freeglut\include;C:\Users\Andreea Ristea\GitHubProjects\BouncingBalls\Dependencies\glew-2.2.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);freeglut.lib;glfw3.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\Andreea Ristea\Desktop\Facultate_Sem2\Sisteme_de_Prelucrare_Grafica\ProiectOpenGL\Dependencies\GLFW\lib-vc2022;C:\Users\Andreea Ristea\Desktop\Facultate_Sem2\Sisteme_de_Prelucrare_Grafica\ProiectOpenGL\Dependencies\glew-2.2.0\lib;C:\Users\Andreea Ristea\Desktop\Facultate_Sem2\Sisteme_de_Prelucrare_Grafica\ProiectOpenGL\Dependencies\freeglut\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>freeglut.lib;glew32.lib;$(CoreLibraryDependencies);%(AdditionalDependencies);freeglut.lib;glfw3.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Andreea Ristea\GitHubProjects\BouncingBalls\Dependencies\glew-2.2.0\lib\Release\Win32;C:\Users\Andreea Ristea\GitHubProjects\BouncingBalls\Dependencies\GLFW\lib-vc2022;C:\Users\Andreea Ristea\GitHubProjects\BouncingBalls\Dependencies\freeglut\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -102,12 +114,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Andreea Ristea\GitHubProjects\BouncingBalls\Dependencies\glew-2.2.0\include;C:\Users\Andreea Ristea\GitHubProjects\BouncingBalls\Dependencies\GLFW\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Andreea Ristea\GitHubProjects\BouncingBalls\Dependencies\glew-2.2.0\lib\Release\Win32;C:\Users\Andreea Ristea\GitHubProjects\BouncingBalls\Dependencies\GLFW\lib-vc2022;C:\Users\Andreea Ristea\GitHubProjects\BouncingBalls\Dependencies\freeglut\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>freeglut.lib;glew32.lib;$(CoreLibraryDependencies);%(AdditionalDependencies);</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

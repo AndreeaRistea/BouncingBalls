@@ -8,7 +8,7 @@ class Camera {
     double dTheta;      // Increment pentru unghiul theta
     double dPhi;        // Increment pentru unghiul phi
 public:
-    Camera() : theta(0), phi(0), radius(30), dTheta(0.2), dPhi(0.1) {}
+    Camera() : theta(0), phi(0), radius(2), dTheta(0.2), dPhi(0.1) {}
 
     double getX() {
         return radius * sin(theta) * cos(phi);
@@ -32,11 +32,9 @@ public:
 
     void moveUp() {
         phi += dPhi;
-        if (phi >= M_PI) phi = M_PI - 0.01; // Limităm unghiul phi să nu degenereze
     }
 
     void moveDown() {
         phi -= dPhi;
-        if (phi <= 0) phi = 0.01; // Limităm unghiul phi să nu degenereze
     }
 };

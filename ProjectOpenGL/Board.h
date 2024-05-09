@@ -10,36 +10,37 @@ class Board
 	int width;
 	int depth;
 	GLfloat* color;
+	int textureId;
 public:
-
-	Board(int width, int depth, GLfloat* c) : width(width), depth(depth), color(c) {}
+	Board(int width, int depth) : width(width), depth(depth) {}
 	double centerX() { return width / 2; }
 	double centerZ() { return depth / 2; }
 
-	void create()
+	void create(int textureId)
 	{
-		displayListId = glGenLists(1);
-		glNewList(displayListId, GL_COMPILE);
-		glBegin(GL_QUADS);
-		glNormal3d(0, 1, 0);
-		for (int x = 0; x < width - 1; x++)
-		{
-			for (int z = 0; z < depth - 1; z++) {
-				glGetMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, (x + z) % 2 == 0 ? BLUE : WHITE);
-				glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color);
-				glVertex3d(x, 0, z);
-				glVertex3d(x + 1, 0, z);
-				glVertex3d(x + 1, 0, z + 1);
-				glVertex3d(x, 0, z + 1);
-			}
-		}
-		glEnd();
-		glEndList();
+		this->textureId = textureId;
 	}
 
 	void draw()
 	{
-		glCallList(displayListId);
-	}
+		glMatrixMode(GL_MODELVIEW);
 
+		glBindTexture(GL_TEXTURE_2D, textureId);
+		glBegin(GL_QUADS);
+
+		glTexCoord2f(0.0f, 0.0f);
+		glVertex3f(0.0f, 0.0f, 0.0f);    // Stânga-sus
+
+		glTexCoord2f(0.0f, 1.0f);
+		glVertex3f(0.0f, 0.0f, depth);  // Stânga-jos
+
+		glTexCoord2f(1.0f, 1.0f);
+		glVertex3f(width, 0.0f, depth);  // Dreapta-jos
+
+		glTexCoord2f(1.0f, 0.0f);
+		glVertex3f(width, 0.0f, 0.0f);  // Dreapta-sus
+
+		glEnd();
+		glBindTexture(GL_TEXTURE_2D, 0);
+	}
 };

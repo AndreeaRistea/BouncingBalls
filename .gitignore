@@ -1,2 +1,8 @@
 ﻿.vs
 Debug
+Dependencies/soil/.BUILDINFO
+Dependencies/soil/.MTREE
+Dependencies/soil/.PKGINFO
+Dependencies/soil/mingw64/include/SOIL/SOIL.h
+Dependencies/soil/mingw64/lib/libSOIL.a
+Dependencies/soil/mingw64/share/doc/SOIL/soil.html
